@@ -2,11 +2,11 @@
 
 
 
-start=2022-01-01
+start_date=2022-01-01
 end=2023-01-01
 while [ "$start" != $end ]; do
   echo $start
-  start=$(date -I -d "$start + 1 day")
+  start=$(date -I -d "$start_date + $RANDOM day")
   touch $start$RANDOM
   git add .
   git commit -am "my contribution on day $start" --date=$start
